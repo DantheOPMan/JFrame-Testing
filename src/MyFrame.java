@@ -18,4 +18,5 @@ public class MyFrame extends JFrame{
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
+    
 }
