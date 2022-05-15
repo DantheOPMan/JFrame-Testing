@@ -19,7 +19,7 @@ public class MyPanel extends JPanel implements ActionListener {
     int y = 0;
 
     MyPanel() {
-        this.setPreferredSize(new Dimension(PANEL_WIDTH, PANEL_HEIGHT));
+        this.setPreferredSize(tk.getScreenSize());
         this.setOpaque(false);
         phoenix = new ImageIcon("Phoenix.png").getImage().getScaledInstance(phoenixWidth, phoenixHeight,Image.SCALE_DEFAULT);
         timer = new Timer(time, this);
@@ -38,10 +38,10 @@ public class MyPanel extends JPanel implements ActionListener {
         int decisionTime = gen.nextInt(20) + 20;
 
         
-        if (x >= PANEL_WIDTH - phoenix.getWidth(null) || x < 0) {
+        if (x >= (int)(tk.getScreenSize().getWidth()) - phoenix.getWidth(null) || x < 0) {
             xVelocity = xVelocity * -1;
         }
-        if (y >= PANEL_HEIGHT - phoenix.getHeight(null) || y < 0) {
+        if (y >= (int)(tk.getScreenSize().getWidth()) - phoenix.getHeight(null) || y < 0) {
             yVelocity = yVelocity * -1;
         }
         x = x + xVelocity;

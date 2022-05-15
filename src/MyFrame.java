@@ -8,7 +8,7 @@ public class MyFrame extends JFrame{
         panel = new MyPanel();
         Toolkit tk = Toolkit.getDefaultToolkit();
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize((int)tk.getScreenSize().getWidth(),(int)tk.getScreenSize().getHeight());
+        this.setSize(tk.getScreenSize());
         this.setUndecorated(true);
         this.setBackground(new Color(1.0f,1.0f,1.0f,0.0f));
         this.setAlwaysOnTop(true);
