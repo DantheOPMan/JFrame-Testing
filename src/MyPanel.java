@@ -1,19 +1,20 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Random;
 
 public class MyPanel extends JPanel implements ActionListener {
     Toolkit tk = Toolkit.getDefaultToolkit();
     final int PANEL_WIDTH = (int) tk.getScreenSize().getWidth();
     final int PANEL_HEIGHT = (int) tk.getScreenSize().getHeight();
     Image phoenix;
-    int phoenixWidth = 100;
-    int phoenixHeight = 100;
+    int phoenixWidth = 50;
+    int phoenixHeight = 50;
     Image backgroundImage;
     Timer timer;
-    int time = 10;
-    int xVelocity = 5;
-    int yVelocity = 5;
+    int time = 50;
+    int xVelocity = 1;
+    int yVelocity = 1;
     int x = 0;
     int y = 0;
 
@@ -33,6 +34,9 @@ public class MyPanel extends JPanel implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        Random gen = new Random();
+        int decisionTime = gen.nextInt(20) + 20;
+
         
         if (x >= PANEL_WIDTH - phoenix.getWidth(null) || x < 0) {
             xVelocity = xVelocity * -1;
@@ -43,6 +47,13 @@ public class MyPanel extends JPanel implements ActionListener {
         x = x + xVelocity;
         y = y + yVelocity;
         repaint();
+        /*Point mouse = MouseInfo.getPointerInfo().getLocation();
+        x = (int)mouse.getX() - phoenixHeight / 2;
+        y = (int)mouse.getY() - phoenixWidth / 2;
+       */
+        
+    }
+    private void setNewDirection(){
 
     }
 
